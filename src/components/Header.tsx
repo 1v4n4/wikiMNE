@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { AppBar, PaletteMode, Box, Toolbar, Button, IconButton, Typography, Menu, MenuItem, Container } from '@mui/material';
+import { AppBar, PaletteMode, Box, Toolbar, Link, IconButton, Typography, Menu, MenuItem, Container } from '@mui/material';
 import { Menu as MenuIcon, LightMode, DarkMode } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -73,31 +73,31 @@ const Header: React.FC<Props> = ({mode, toggleMode}) => {
           </Box>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
-              <Button
+              <Link
                 key={page[0]}
-                color="primary"
-                onClick={() => history(page === "doma" ? "/" : "/" + page)}
-                sx={{ m: 2, display: 'block' }}
+                href= {page === "doma" ? "/" : "/" + page}
+                color="text.secondary"
+                sx={{ m: 3, display: 'block' }}
+                underline='none'
               >
-                <Typography variant='h6' textAlign="center">
+                <Typography variant='h5' textAlign="center">
 
                 <motion.h5
                 whileHover={{
-                  scale: 1.1,
+                  scale: 1.4,
                   textShadow: '0px 0px 8px rgb(67,67,67)',
-                }}
+                    }}
+                    whileTap={{ scale: 0.8 }}
               >
-
-                    {page}
-
+                    {page.toUpperCase()}
               </motion.h5>
                 </Typography>
-              </Button>
+              </Link>
             ))}
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
-            <IconButton color="secondary" type='button' onClick={() => mode === "light" ? toggleMode("dark") : toggleMode("light")}>
+            <IconButton color={mode === 'light' ? 'primary' : "secondary"} type='button' onClick={() => mode === "light" ? toggleMode("dark") : toggleMode("light")}>
               {mode === 'light' ? <DarkMode /> : <LightMode />}
             </IconButton>
           </Box>

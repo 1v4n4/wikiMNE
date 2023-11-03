@@ -5,9 +5,9 @@ const Home: React.FC = () => {
 
   return (
     <div>
-      <h3>Home</h3>
-      <Typography variant="h1">h1</Typography>
-      <Typography variant="h2">h1</Typography>
+      <h3>Kako da doprinesem?</h3>
+      <Typography variant="h1">Napravi nalog</Typography>
+      <Typography variant="body1">Promjene (editi), komentari ili bilo kakve interakcije sa Wiki sistemom biće povezane sa ovim nalogom. </Typography>
       <Typography variant="h3">h1</Typography>
       <Typography variant="h4" color="secondary"> secondary</Typography>
       <Typography variant="body1">This is regular text</Typography>
